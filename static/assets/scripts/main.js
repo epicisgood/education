@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Nav
 var nav = document.querySelector('.fixed-nav-bar')
-
 if (nav) {
   var html = `
+    <p id="watermark"><b>made by epic</b></p>
+    <p id="version"><b>Version 5.1.5</b></p>
     <div class="fixed-nav-bar-container">
       <a class="icon" href="/./"><img alt="nav" id="INImg" src="/assets/media/favicon/main.png"/></a>
     </div>
@@ -32,6 +33,7 @@ if (nav) {
       <a class="navbar-link" href="/./s"><i class="fa-solid fa-gear navbar-icon settings-icon"></i><xn>Set</xn><xn>tings</xn></a>
     </div>`
   nav.innerHTML = html
+
 }
 
 // Themes

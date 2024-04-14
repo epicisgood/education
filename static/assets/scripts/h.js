@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const iframe = document.getElementById('nasa');
+  const removeButton = document.getElementById('removeButton');
+  const fixedNavBar = document.querySelector('.fixed-nav-bar');
+  const main = document.querySelector('.main')
+
+  removeButton.addEventListener('click', function () {
+    
+    // Remove the iframe and the button
+    iframe.parentNode.removeChild(iframe);
+    removeButton.parentNode.removeChild(removeButton);
+
+    // Make other elements visible
+    fixedNavBar.style.display = 'block';
+    main.style.display = 'flex';
+    
+  });
+});
+
+
 let inFrame
 
 try {
@@ -32,7 +52,7 @@ if (!inFrame && !navigator.userAgent.includes('Firefox')) {
     doc.head.appendChild(link)
     doc.body.appendChild(iframe)
 
-    const pLink = localStorage.getItem(encodeURI('pLink')) || 'https://www.nasa.gov/'
+    const pLink = localStorage.getItem(encodeURI('pLink')) || 'https://www.google.com/'
     location.replace(pLink)
 
     const script = doc.createElement('script')
@@ -164,16 +184,33 @@ document.addEventListener('DOMContentLoaded', function (event) {
 })
 
 let splashtext = [
-  'Over 8 Million Users since 2023',
-  'Fastest growing proxy server',
-  'Made by xBubbo',
-  'Check out discord.gg/interstellar :)',
-  'Thanks for using the site',
-  'Follow us on Tiktok (@useinterstellar)',
-  'Subscribe to us on YouTube (@unblocking)',
-  'Subscribe to my Youtube (@xbubbo)',
-  'Check out the settings page',
-  'Check out our Patreon (https://www.patreon.com/gointerstellar)',
+  'I can massage them for u Lona 😉',
+  '"I actually love little kids. I get payed 500$ to do it"',
+  'Lona a real one and a homie frfr ♡',
+  '"I never miss a day of school!" - Smith 💀💕',
+  'I plant the bomb 💣💣💣💣💣💣💣💣💥💥💥💥💥',
+  'donald duck be yapping all day 🗣️🗣️',
+  'resurgence ranked fr grind on that warzone',
+  'Jeffery looking zesty today',
+  'I brought a tub of chocolate ice cream to school',
+  'Daddy deleted my COD account 😭😭',
+  'zestivan has L rizz',
+  'dickery',
+  'mr greasy is wild look at his short looking ahh',
+  '♡ uwu ♡',
+  'Mr.zestivan face during the prep rally 🗿🗿🗿',
+  'Chicko blocko roblox gangs 🥶🥶',
+  "Mr.Big Storm's 365 washing machine exploded... 😢😢",
+  'The phone being an egg cooker on cod warzone 🥚',
+  '🍆🍆🍆🍑🍑🍑 🤨🤨',
+  'The essay has to be so good for him that he jerks off for it to be a 100%. tired of him',
+  `I had sex with 20 boys - Family Life movie`,
+  'u dont want to touch me becuase im a slut - Family Life movie',
+  '"SHES TOO YOUNG - Family Life Movie"',
+  `LOOK AT THE SUN WITHOUT PROTECTION☀️☀️`,
+  '⚡⚡Bolt community NSFW channel ⚡⚡',
+  "zestivan's protein bars tasted soo good holly shi-",
+  '😊😂💕🥰😍'
 ]
 
 document.getElementById('splash').innerText = splashtext[Math.floor(Math.random() * splashtext.length)]

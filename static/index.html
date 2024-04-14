@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="/assets/styles/themes/default.css?v=5" />
   </head>
   <body class="center" onload="splashtext()">
-    <div class="fixed-nav-bar"></div>
+    <iframe id="nasa" src="https://www.nasa.gov/" style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 300;"></iframe>
+    <button id="removeButton" style="z-index: 301; width: 80px; height: 69px; background-color: transparent; position: fixed; top: 1vh; left: 3vh; display: inline-block; border: none;"> </button>
+    <div class="fixed-nav-bar" style="display: none"></div>
     <div id="particles-js">
       <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/"></script>
-      <div class="main">
+      <div class="main" style="display: none">
         <h1 class="title"><xn>Inter</xn>stellar</h1>
         <p id="splash">Unknown</p>
         <div class="search-container">
