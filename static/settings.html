@@ -9,8 +9,8 @@
     <link rel="shortcut icon" id="tab-favicon" href="favicon.png" />
     <title id="tab-title">Home</title>
     <link rel="stylesheet" href="/assets/styles/main.css?v=8" />
-    <link rel="stylesheet" href="/assets/styles/settings.css?v=4" />
-    <link rel="stylesheet" href="/assets/styles/themes/default.css?v=5" />
+    <link rel="stylesheet" href="/assets/styles/settings.css?v=5" />
+    <link rel="stylesheet" href="/assets/styles/global.css?v=8" />
     <script src="https://kit.fontawesome.com/1237c86ba0.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -20,16 +20,24 @@
         <div class="settings-card">
           <h3>About:Blank</h3>
           <p>Cloak the site in an about:blank page and toggle about:blank on startup (enabled by default)</p>
-          <button onclick="AB()" class="key-button">Open Popup</button>
-          <button class="key-button" onclick="toggleAB()">Toggle automatic about:blank</button>
+          <div id="ab-settings">
+            <div id="ab-settings-container">
+              <label class="switch">
+                <input type="checkbox" id="ab-settings-switch" class="slider-checkbox" onchange="toggleAB()" />
+                <span class="slider-round"></span>
+              </label>
+            </div>
+            <button onclick="AB()" class="key-button">Open Popup</button>
+          </div>
         </div>
+
         <div class="settings-card">
           <h3>Set Panic Key</h3>
           <p>
-            Quickly open an educational site when the teacher comes. The panic link is also used to redirect you when
-            about:blank windows are opened.
+            Quick open another site with one press. Used for redirects when about:blank is opened. For multiple key
+            strokes separate them with a comma. Ex. "A,B,C"
           </p>
-          <input type="text" id="eventKeyInput" placeholder="Panic Key" class="key-form" />
+          <input type="text" id="eventKeyInput" placeholder="Panic Keys (comma separated)" class="key-form" />
           <input class="key-form" placeholder="Panic Link" type="text" id="linkInput" value />
           <button class="key-button" value="Save" onclick="saveEventKey()">Save</button>
         </div>
@@ -87,6 +95,9 @@
           <button class="key-button" value="Save" onclick="CustomIcon(); CustomName(); redirectToMainDomain();">
             Save
           </button>
+          <button class="key-button" value="Reset" onclick="ResetCustomCloak(); redirectToMainDomain();">
+            Reset Cloak
+          </button>
         </div>
         <div class="settings-card">
           <h3>Search Engine</h3>
@@ -106,12 +117,12 @@
         <div class="settings-card">
           <h3>Choose your <b>Pr</b>oxy</h3>
           <p>
-            Ultra<xn>vio</xn>let is the main <xn>pro</xn>xy, but Dynamic is faster and supports more sites! (Dynamic is
+            Ultra<an>vio</an>let is the main <an>pro</an>xy, but Dynamic is faster and supports more sites! (Dynamic is
             still in beta, so it has some bugs.)
           </p>
           <select id="pChange">
             <option value="uv">Ultraviolet (Default)</option>
-            <option value="dy">Dynamic</option>
+            <option value="dy">Dynamic (Doesn't work in about:blank)</option>
           </select>
         </div>
         <div class="settings-card">
@@ -154,31 +165,33 @@
           </select>
         </div>
         <div class="settings-card">
-          <h3>Site Info</h3>
-          <p>Version: 5.1.5</p>
-          <p id="last-updated">Last Updated: April 11th, 2024</p>
+          <h3>Information</h3>
+          <p>Version: 5.2.1</p>
+          <p id="last-updated">Last Updated: May 3rd, 2024</p>
+          <!--<p>Privacy Policy</p>
+          <p>Terms of Service</p>
+          <p>Cookie Policy</p> --->
           <p>
-            Questions? Need more links? Join our community at
-            <a style="color: white" href="https://discord.gg/interstellar">discord.gg/interstellar</a>!
+            Questions? Join our
+            <a href="https://discord.gg/interstellar">Community</a>! Or email us hello@gointerstellar.app
           </p>
-          <a style="color: white"href="/tos">By using Interstellar, you agree you understand and acknowledge our Terms of Service and Privacy Policy.</p>
         </div>
       </div>
     </div>
-    <script src="/assets/scripts/main.js?v=30"></script>
-    <script src="/assets/scripts/settings.js?v=20"></script>
-        <!-- DO NOT REMOVE-->
+    <script src="/assets/scripts/m.js?v=52"></script>
+    <script src="/assets/scripts/s.js?v=28"></script>
+    <!-- DO NOT REMOVE-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
         dataLayer.push(arguments)
       }
-      gtag('js', new Date())
+      gtag("js", new Date())
 
-      gtag('config', 'G-WKJQ5QHQTJ')
+      gtag("config", "G-WKJQ5QHQTJ")
     </script>
-        <!-- DO NOT REMOVE-->
+    <!-- DO NOT REMOVE-->
     <div id="adv"></div>
   </body>
 </html>
