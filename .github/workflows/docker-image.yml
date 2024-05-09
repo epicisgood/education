@@ -14,5 +14,5 @@ jobs:
           docker build . -t mouse134/mouse134:latest
       - name: publish
         run: |
-          docker login -u mouse134 -p dckr_pat_uHbvYrRGe9RN6X9WGgIYeENr26k
+          docker login -u mouse134 -p dckr_pat_qCD-B95tZ5FgG4Xifng_JNEzeX4
           docker push mouse134/mouse134:latest
