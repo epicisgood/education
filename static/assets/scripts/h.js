@@ -207,7 +207,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   '😊😂💕🥰😍',
   'AP CP 💪 🫡 📡 ❗',
   'when im not here, no one should be around that proximity 👎😡😡👎 - zesti boy 🍆🍆🍆',
-  'POV: Mr.Zestivan: 🚪🙋‍♂️🧍‍♂️sways left and right, arms crossed. YOU: 😤💢👎🤢. Zestivan missing:🍫🥜🏋️‍♂️🤑💸💰'
+  'POV: Mr.Zestivan: 🚪🙋‍♂️🧍‍♂️sways left and right, arms crossed. YOU: 😤💢👎🤢. Zestivan missing:🍫🥜🏋️‍♂️🤑💸💰',
+  '"Morning everybody 😊 I SAID GOOD MORNING EVERYBODY! 😤💢"'
   ]
 
 let SplashI = Math.floor(Math.random() * SplashT.length)
