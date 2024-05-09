@@ -183,23 +183,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 })
 
-let splashtext = [
-  'I can massage them for u Lona 😉',
+  let SplashT = [
+    'I can massage them for u Lona 😉',
   '"I actually love little kids. I get payed 500$ to do it"',
-  'Lona a real one and a homie frfr ♡',
   '"I never miss a day of school!" - Smith 💀💕',
   'I plant the bomb 💣💣💣💣💣💣💣💣💥💥💥💥💥',
   'donald duck be yapping all day 🗣️🗣️',
-  'resurgence ranked fr grind on that warzone',
   'Jeffery looking zesty today',
   'I brought a tub of chocolate ice cream to school',
   'Daddy deleted my COD account 😭😭',
-  'zestivan has L rizz',
   'dickery',
-  'mr greasy is wild look at his short looking ahh',
   '♡ uwu ♡',
   'Mr.zestivan face during the prep rally 🗿🗿🗿',
-  'Chicko blocko roblox gangs 🥶🥶',
   "Mr.Big Storm's 365 washing machine exploded... 😢😢",
   'The phone being an egg cooker on cod warzone 🥚',
   '🍆🍆🍆🍑🍑🍑 🤨🤨',
@@ -208,17 +203,30 @@ let splashtext = [
   'u dont want to touch me becuase im a slut - Family Life movie',
   '"SHES TOO YOUNG - Family Life Movie"',
   `LOOK AT THE SUN WITHOUT PROTECTION☀️☀️`,
-  '⚡⚡Bolt community NSFW channel ⚡⚡',
   "zestivan's protein bars tasted soo good holly shi-",
-  '😊😂💕🥰😍'
-]
+  '😊😂💕🥰😍',
+  'AP CP 💪 🫡 📡 ❗',
+  'when im not here, no one should be around that proximity 👎😡😡👎 - zesti boy 🍆🍆🍆',
+  'POV: Mr.Zestivan: 🚪🙋‍♂️🧍‍♂️sways left and right, arms crossed. YOU: 😤💢👎🤢. Zestivan missing:🍫🥜🏋️‍♂️🤑💸💰'
+  ]
 
 let SplashI = Math.floor(Math.random() * SplashT.length)
 const SplashE = document.getElementById("splash")
 
 function US() {
-  SplashI = (SplashI + 1) % SplashT.length
-  SplashE.innerText = SplashT[SplashI]
+  SplashI = (SplashI + 1) % SplashT.length;
+  let randomSplash = SplashT[SplashI];
+
+  if (randomSplash.includes("sways left and right, arms crossed")) {
+    randomSplash = randomSplash.replace(
+      "sways left and right arms crossed",
+      '<span style="font-style: italic;">sways left and right arms crossed</span>'
+    );
+  
+  }
+
+  // Set the splash text
+  SplashE.innerHTML = randomSplash;
 }
 
 SplashE.innerText = SplashT[SplashI]
