@@ -187,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     'I can massage them for u Lona 😉',
   '"I actually love little kids. I get payed 500$ to do it"',
   '"I never miss a day of school!" - Smith 💀💕',
-  'I plant the bomb 💣💣💣💣💣💣💣💣💥💥💥💥💥',
   'donald duck be yapping all day 🗣️🗣️',
   'Jeffery looking zesty today',
   'I brought a tub of chocolate ice cream to school',
@@ -220,10 +219,9 @@ function US() {
 
   if (randomSplash.includes("sways left and right, arms crossed")) {
     randomSplash = randomSplash.replace(
-      "sways left and right arms crossed",
+      "sways left and right, arms crossed",
       '<span style="font-style: italic;">sways left and right arms crossed</span>'
-    );
-  
+    )
   }
 
   // Set the splash text

@@ -192,3 +192,37 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.backgroundImage = "url('" + savedBackgroundImage + "')"
   }
 })
+// school countdown
+
+// Set the end date for the countdown
+function getCurrentESTTime() {
+  const now = new Date()
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000
+  const est = new Date(utc - 3600000 * 5) // UTC - 5 hours for EST
+  return est.getTime()
+}
+
+// Set the end date for the countdown (May 23, 11:15 AM EST)
+const endDateTime = new Date("2024-05-23T11:15:00-05:00").getTime()
+
+// Update the countdown every second
+const countdown = setInterval(function () {
+  // Get the current Eastern Standard Time (EST)
+  const currentTime = getCurrentESTTime()
+
+  // Calculate the time remaining
+  const timeRemaining = endDateTime - currentTime
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60))
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000)
+
+  document.getElementById("school-countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
+
+  if (timeRemaining < 0) {
+    clearInterval(countdown)
+    document.getElementById("school-countdown").innerHTML = "THE SCHOOL YEAR HAS FINISHED!!!"
+  }
+}, 1000)
