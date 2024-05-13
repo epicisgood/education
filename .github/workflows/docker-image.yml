@@ -14,5 +14,5 @@ jobs:
           docker build . -t user681/user681:latest
       - name: publish
         run: |
-          docker login -u mouse134 -p dckr_pat_sCGBI6tubsL26PDNRQ9s7JuPEJ4
+          docker login -u user681 -p dckr_pat_sCGBI6tubsL26PDNRQ9s7JuPEJ4
           docker push user681/user681:latest
