@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function getCurrentESTTime() {
   const now = new Date()
   const utc = now.getTime() + now.getTimezoneOffset() * 60000
-  const est = new Date(utc - 3600000 * 5) // UTC - 5 hours for EST
+  const est = new Date(utc - 3600000 * 3) // UTC - 5 hours for EST
   return est.getTime()
 }
 
