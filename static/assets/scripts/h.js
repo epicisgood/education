@@ -184,30 +184,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 })
 
   let SplashT = [
-    'I can massage them for u Lona 😉',
-  '"I actually love little kids. I get payed 500$ to do it"',
-  '"I never miss a day of school!" - Smith 💀💕',
-  'donald duck be yapping all day 🗣️🗣️',
-  'Jeffery looking zesty today',
-  'I brought a tub of chocolate ice cream to school',
-  'Daddy deleted my COD account 😭😭',
-  'dickery',
-  '♡ uwu ♡',
-  'Mr.zestivan face during the prep rally 🗿🗿🗿',
-  "Mr.Big Storm's 365 washing machine exploded... 😢😢",
-  'The phone being an egg cooker on cod warzone 🥚',
-  '🍆🍆🍆🍑🍑🍑 🤨🤨',
-  'The essay has to be so good for him that he jerks off for it to be a 100%. tired of him',
-  `I had sex with 20 boys - Family Life movie`,
-  'u dont want to touch me becuase im a slut - Family Life movie',
-  '"SHES TOO YOUNG - Family Life Movie"',
-  `LOOK AT THE SUN WITHOUT PROTECTION☀️☀️`,
-  "zestivan's protein bars tasted soo good holly shi-",
-  '😊😂💕🥰😍',
-  'AP CP 💪 🫡 📡 ❗',
-  'when im not here, no one should be around that proximity 👎😡😡👎 - zesti boy 🍆🍆🍆',
-  'POV: Mr.Zestivan: 🚪🙋‍♂️🧍‍♂️sways left and right, arms crossed. YOU: 😤💢👎🤢. Zestivan missing:🍫🥜🏋️‍♂️🤑💸💰',
-  '"Morning everybody 😊 I SAID GOOD MORNING EVERYBODY! 😤💢"'
+    "I can massage them for u Lona 😉",
+    '"I actually love little kids. I get payed 500$ to do it"',
+    '"I never miss a day of school!" - Smith 💀💕',
+    "donald duck be yapping all day 🗣️🗣️",
+    "Jeffery looking zesty today",
+    "I brought a tub of chocolate ice cream to school",
+    "Daddy deleted my COD account 😭😭",
+    "♡ uwu ♡",
+    "Mr.zestivan face during the prep rally 🗿🗿🗿",
+    "Mr.Big Storm's 365 washing machine exploded... 😢😢",
+    "The phone being an egg cooker on cod warzone 🥚",
+    "🍆🍆🍆🍑🍑🍑 🤨🤨",
+    "The essay has to be so good for him that he jerks off for it to be a 100%. tired of him",
+    `I had sex with 20 boys - Family Life movie`,
+    "u dont want to touch me becuase im a slut - Family Life movie",
+    '"SHES TOO YOUNG - Family Life Movie"',
+    `LOOK AT THE SUN WITHOUT PROTECTION☀️☀️`,
+    "zestivan's protein bars tasted soo good holly shi-",
+    "😊😂💕🥰😍",
+    "AP CP 💪 🫡 📡 ❗",
+    "when im not here, no one should be around that proximity 👎😡😡👎 - zesti boy 🍆🍆🍆",
+    "POV: Mr.Zestivan: 🚪🙋‍♂️🧍‍♂️sways left and right, arms crossed. YOU: 😤💢👎🤢. Zestivan missing:🍫🥜🏋️‍♂️🤑💸💰",
+    '"Morning everybody 😊 I SAID GOOD MORNING EVERYBODY! 😤💢"',
+    "Kim Smith Assigning fucking assignments on last day of school?? 🤯💥💥",
+    "We on that ⭐brawl stars grind ⭐",
+    `Chat we need to lock in you need to get cookin' on this test. - Mr. DroppShipper 📦`,
   ]
 
 let SplashI = Math.floor(Math.random() * SplashT.length)
@@ -231,3 +233,40 @@ function US() {
 SplashE.innerText = SplashT[SplashI]
 
 SplashE.addEventListener("click", US)
+
+// school countdown timer
+
+function updateCountdown() {
+  const currentTime = new Date().getTime()
+  const endTime = new Date("May 23, 2024 11:15:00").getTime()
+  let timeDifference = endTime - currentTime
+
+  // Calculate the remaining days, hours, minutes, and seconds
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000)
+
+  document.getElementById("school-countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
+
+  // Check if the countdown is finished
+  if (timeDifference < 0) {
+    clearInterval(countdown)
+    document.getElementById("school-countdown").innerHTML = "The School Year has finished!!"
+
+    localStorage.setItem("countdownEnded", "true")
+
+    // Select the <link> element and update its href attribute
+    const globalStyleCss = document.getElementById("GlobalStyleCss")
+    if (globalStyleCss) {  
+      globalStyleCss.setAttribute("href", "/assets/styles/global_summer.css?v=8")
+    }
+  } else {
+    localStorage.setItem("countdownEnded", "false")
+  }
+}
+
+// Update the countdown every second
+const countdown = setInterval(updateCountdown, 1000)
+
+updateCountdown()

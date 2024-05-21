@@ -502,6 +502,8 @@ select {
   padding: 1em 2em;
   font-size: 1.2em;
   background: hsla(0, 82%, 51%, 0.5);
+  max-width: 200px;
+  text-align: center;
 }
 
 .c-container {

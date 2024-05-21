@@ -1,0 +1,29 @@
+:root {
+  --page: url("https://i.pinimg.com/736x/f5/ab/7a/f5ab7a24908fb8d52d320b737a7e71ca.jpg");
+  --background: rgba(251, 255, 0, 0.349);
+  --background-filter: blur(10px) brightness(80%);
+  --background-secondary: #006d059e;
+  --background-dark: #121212;
+  --background-other: #282828;
+
+  --title: #fff;
+  --block: #008b00;
+  --block-buttons: #00c7c7;
+  --input: #444;
+  --column: #225500;
+  --accent-color: #444;
+  --main: #222;
+
+  --text-primary: #bbffff;
+  --text-secondary: #c0c0c0;
+  --text-placeholder: #ffdb38;
+  --text-dark: #3d3d3d;
+  --text-color: #f0f0f0;
+
+  --primary-color: #1a1a1a;
+  --secondary-color: #2c2c2c;
+  --accent-color: #444;
+  --hover-color: #555;
+
+  --transparent: rgb(0, 0, 0, 0);
+}
