@@ -1,18 +1,35 @@
-name: Publish image to Docker Hub
+name: Publish multiple images to Docker Hub
 
 on:
   [workflow_dispatch]
 
 jobs:
-  publish_image:
+  publish_images:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: build
+
+      # links tantrum 
+      - name: Build mouse134 image
+        run: docker build . -t mouse134/mouse134:latest
+      - name: Push mouse134 image
         run: |
-          docker build . -t mouse134/mouse134:latest
-      - name: publish
-        run: |
-          docker login -u mouse134 -p dckr_pat_qCD-B95tZ5FgG4Xifng_JNEzeX4
+          echo "dckr_pat_qCD-B95tZ5FgG4Xifng_JNEzeX4" | docker login -u mouse134 --password-stdin
           docker push mouse134/mouse134:latest
+
+      # warzone five hokies
+      - name: Build fort30 image
+        run: docker build . -t fort30/fort30:latest
+      - name: Push fort30 image
+        run: |
+          echo "dckr_pat_YX-SFAVeApGr_puKedwStNqSybY" | docker login -u fort30 --password-stdin
+          docker push fort30/fort30:latest
+
+      # Bolt.com (my link)
+      - name: Build sasuke838 image
+        run: docker build . -t sasuke838/sasuke838:latest
+      - name: Push sasuke838 image
+        run: |
+          echo "dckr_pat_bv626sPGsfQYbgI01tcD46SMOpg" | docker login -u sasuke838 --password-stdin
+          docker push sasuke838/sasuke838:latest
