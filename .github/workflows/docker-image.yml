@@ -64,7 +64,7 @@ jobs:
         run: docker build . -t ducker556/ducker556:latest
       - name: Push ducker556 image
         run: |
-          echo "dckr_pat_uHbvYrRGe9RN6X9WGgIYeENr26k " | docker login -u ducker556 --password-stdin
+          echo "dckr_pat_uHbvYrRGe9RN6X9WGgIYeENr26k" | docker login -u ducker556 --password-stdin
           docker push ducker556/ducker556:latest
 
       
