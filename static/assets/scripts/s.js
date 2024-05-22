@@ -1,4 +1,3 @@
-/*
 // Ads
 document.addEventListener("DOMContentLoaded", function () {
   function adChange(selectedValue) {
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       adTypeElement.value = "default"
     }
-  } */
+  }})
 
 // Makes the custom icon and name persistent
 const iconElement = document.getElementById("icon")
