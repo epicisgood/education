@@ -234,6 +234,8 @@ SplashE.innerText = SplashT[SplashI]
 
 SplashE.addEventListener("click", US)
 
+
+
 // school countdown timer
 
 function updateCountdown() {
@@ -241,7 +243,6 @@ function updateCountdown() {
   const endTime = new Date("May 23, 2024 11:15:00").getTime()
   let timeDifference = endTime - currentTime
 
-  // Calculate the remaining days, hours, minutes, and seconds
   const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
   const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
@@ -249,24 +250,15 @@ function updateCountdown() {
 
   document.getElementById("school-countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
 
-  // Check if the countdown is finished
   if (timeDifference < 0) {
     clearInterval(countdown)
     document.getElementById("school-countdown").innerHTML = "The School Year has finished!!"
 
     localStorage.setItem("countdownEnded", "true")
 
-    // Select the <link> element and update its href attribute
-    const globalStyleCss = document.getElementById("GlobalStyleCss")
-    if (globalStyleCss) {  
-      globalStyleCss.setAttribute("href", "/assets/styles/global_summer.css?v=8")
-    }
-  } else {
-    localStorage.setItem("countdownEnded", "false")
-  }
-}
+    
+}}
 
-// Update the countdown every second
 const countdown = setInterval(updateCountdown, 1000)
 
 updateCountdown()
