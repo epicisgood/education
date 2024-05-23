@@ -1,29 +1,30 @@
 :root {
-  --page: url("/./assets/media/background/full2.png");
-  --background: rgba(255, 255, 255, 0.02);
+  --page: url("/./assets/media/background/summer-background.png");
+  --background: rgba(251, 255, 0, 0.349);
   --background-filter: blur(10px) brightness(80%);
-  --background-secondary: #4545459e;
+  --background-secondary: #006d059e;
   --background-dark: #121212;
   --background-other: #282828;
 
   --title: #fff;
-  --block: #2a2a2a;
-  --block-buttons: #333;
+  --block: hsl(110, 79%, 20%);
+  --block-buttons: #008d76;
   --input: #444;
-  --column: #353535;
+  --column: #225500;
   --accent-color: #444;
   --main: #222;
 
-  --text-primary: #fff;
-  --text-secondary: #b0b0b0;
-  --text-placeholder: #aaa;
-  --text-dark: #555;
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0;
+  --text-placeholder: #ffdf2c;
+  --text-dark: #3d3d3d;
   --text-color: #f0f0f0;
 
   --primary-color: #1a1a1a;
   --secondary-color: #2c2c2c;
   --accent-color: #444;
-  --hover-color: #555;
+  --hover-color: hsl(110, 79%, 10%);
 
-  --transparent: rgb(0, 0, 0, 0);
+  /* Other Colors */
+  --tab-hover: hsl(110, 79%, 30%);
 }
