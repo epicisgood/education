@@ -33,15 +33,19 @@
 ### Server Deployment
 
 You must run these commands on your server:  
-`git clone https://github.com/InterstellarNetwork/interstellar`  
-`cd interstellar`  
-`npm install`  
-`npm start`
+```bash
+git clone https://github.com/InterstellarNetwork/Interstellar
+cd Interstellar 
+npm install
+npm start
+```
 
 ### Updating
 
-`cd interstellar`  
-`git pull --force --allow-unrelated-histories`
+```bash
+cd Interstellar
+git pull --force --allow-unrelated-histories # may overwrite changes!
+```
 
 <a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/interstellarnetwork/interstellar"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
 <a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/interstellarnetwork/interstellar"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
@@ -64,8 +68,8 @@ As of January 1st, 2024, Replit is [no longer free](https://blog.replit.com/host
 2. Click "Code" (green button) and then "Create Codespace on main."
 3. In the terminal at the bottom, paste `pnpm i && pnpm start`.
 4. Respond to the application popup by clicking "Make public."
-> [!IMPORTANT]
-> Make sure you click the "Make public." button, or the proxy won't function properly.
+   > [!IMPORTANT]
+   > Make sure you click the "Make public." button, or the proxy won't function properly.
 5. Access the deployed website from the ports tab.
 6. For subsequent uses in the same codespace, just run `pnpm start`
 

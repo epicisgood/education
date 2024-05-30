@@ -1,7 +1,5 @@
 window.addEventListener("load", () => {
   navigator.serviceWorker.register("../sw.js?v=5-5-2024", { scope: "/a/" })
-})
-window.addEventListener("load", () => {
   const form = document.getElementById("fs")
   const input = document.getElementById("is")
   if (form && input) {
@@ -47,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const newTab = document.createElement("li")
     const tabTitle = document.createElement("span")
     const newIframe = document.createElement("iframe")
-    newIframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-pointer-lock"
+    newIframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock"
+    // When Top Navigation is not allowed links with the "top" value will be entirely blocked, if we allow Top Navigation it will overwrite the tab, which is obviously not wanted.
     tabTitle.textContent = `New Tab ${tabCounter}`
     tabTitle.className = "tab-title"
     newTab.dataset.tabId = tabCounter
@@ -87,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const GoURL = sessionStorage.getItem("GoUrl")
     const URL = sessionStorage.getItem("URL")
 
-    if (tabCounter === 1) {
+    if (tabCounter === 0 || tabCounter === 1) {
       if (GoURL !== null) {
         if (GoURL.includes("/e/")) {
           newIframe.src = window.location.origin + GoURL
@@ -104,10 +103,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       } else if (GoURL !== null) {
         if (GoURL.includes("/e/")) {
           newIframe.src = window.location.origin + GoURL
-          sessionStorage.removeItem("GoUrl")
         } else {
           newIframe.src = window.location.origin + "/a/" + GoURL
-          sessionStorage.removeItem("GoUrl")
         }
       } else {
         newIframe.src = "/"

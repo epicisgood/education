@@ -4,7 +4,10 @@ import { createBareServer } from "@tomphttp/bare-server-node"
 import cors from "cors"
 import express from "express"
 import basicAuth from "express-basic-auth"
+import cookieParser from "cookie-parser"
+import mime from "mime"
 import config from "./config.js"
+import { setupMasqr } from "./Masqr.js"
 
 const __dirname = process.cwd()
 const server = http.createServer()
@@ -18,10 +21,54 @@ if (config.challenge) {
   app.use(basicAuth({ users: config.users, challenge: true }))
 }
 
+app.get("/e/*", async (req, res, next) => {
+  const baseUrls = {
+    "/e/1/": "https://raw.githubusercontent.com/v-5x/x/fixy/",
+    "/e/2/": "https://raw.githubusercontent.com/ypxa/y/main/",
+    "/e/3/": "https://raw.githubusercontent.com/ypxa/w/master/",
+  }
+
+  let reqTarget
+  for (const [prefix, baseUrl] of Object.entries(baseUrls)) {
+    if (req.path.startsWith(prefix)) {
+      reqTarget = baseUrl + req.path.slice(prefix.length)
+      break
+    }
+  }
+
+  if (!reqTarget) {
+    return next()
+  }
+
+  try {
+    const asset = await fetch(reqTarget)
+    if (asset.status !== 200) {
+      return next()
+    }
+
+    const data = Buffer.from(await asset.arrayBuffer())
+    const ext = path.extname(reqTarget)
+    const no = [".unityweb"]
+    const contentType = no.includes(ext) ? "application/octet-stream" : mime.getType(ext)
+
+    res.writeHead(200, { "Content-Type": contentType })
+    res.end(data)
+  } catch (error) {
+    console.error(error)
+    res.setHeader("Content-Type", "text/html")
+  }
+})
+
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+if (process.env.MASQR === "true") {
+  setupMasqr(app)
+}
+
 app.use(express.static(path.join(__dirname, "static")))
-app.use("ov", cors({ origin: true }))
+app.use("/ov", cors({ origin: true }))
 
 const routes = [
   { path: "/as", file: "apps.html" },
@@ -38,38 +85,6 @@ routes.forEach((route) => {
     res.sendFile(path.join(__dirname, "static", route.file))
   })
 })
-
-app.get("/e/*", (req, res, next) => {
-  const baseUrls = [
-    "https://raw.githubusercontent.com/v-5x/x/fixy",
-    "https://raw.githubusercontent.com/ypxa/y/main",
-    "https://raw.githubusercontent.com/ypxa/w/master",
-  ]
-  fetchData(req, res, next, baseUrls)
-})
-
-const fetchData = async (req, res, next, baseUrls) => {
-  try {
-    const reqTarget = baseUrls.map((baseUrl) => `${baseUrl}/${req.params[0]}`)
-    let data
-    let asset
-    for (const target of reqTarget) {
-      asset = await fetch(target)
-      if (asset.ok) {
-        data = await asset.arrayBuffer()
-        break
-      }
-    }
-    if (data) {
-      res.end(Buffer.from(data))
-    } else {
-      next()
-    }
-  } catch (error) {
-    console.error(`Error fetching ${req.url}:`, error)
-    next(error)
-  }
-}
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "static", "404.html"))

@@ -1,17 +1,60 @@
-// Ads
+/*
+LICENSE_SERVER_URL = "https://main.gointerstellar.app/validate?license="
+async function checkLicense(pass) {
+  if (localStorage["LICENSE_CHECK"]) {
+    return true
+  }
+  licenseCheck = (await (await fetch(LICENSE_SERVER_URL + pass + "&host=" + location.origin)).json())["status"]
+  if (licenseCheck == "License valid") {
+    localStorage["LICENSE_CHECK"] = true
+    return true
+  }
+  return false
+} */
+
 document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("ad") === null || localStorage.getItem("ad") === "default") {
-    localStorage.setItem("ad", "on")
+  let ads = localStorage.getItem("ads")
+  if (ads === null || ads === "default" || ads === "true") {
+    localStorage.setItem("ads", "on")
+    ads = "on"
+  } else if (ads === "popups") {
+    ads = "popups"
+  } else if (ads === "off2") {
+    ads = "off2"
   }
 
-  var advDiv = document.getElementById("adv")
-  if (advDiv && localStorage.getItem("ad") === "on") {
-    var script = document.createElement("script")
-    script.type = "text/javascript"
-    script.src = "//oysterscoldtiny.com/54/8d/25/548d25a3d0428027eb19da7447bb6c85.js"
-    advDiv.appendChild(script)
-  } else if (advDiv && localStorage.getItem("ad") === "no") {
-    advDiv.remove()
+  let div = document.getElementById("adv")
+  let div2 = document.getElementById("adv2")
+  if (div) {
+    if (ads === "on") {
+      let scripts = ["//alleygoat.com/4d/2f/92/4d2f92b8c68718dd3efb74b9f9b5fa4e.js", "//alleygoat.com/87/17/b8/8717b825d69c8461460199fb3c6249e4.js"]
+
+      scripts.forEach(function (src) {
+        let script = document.createElement("script")
+        script.type = "text/javascript"
+        script.src = src
+        div.appendChild(script)
+      })
+    } else if (ads === "popups") {
+      let scripts = ["//alleygoat.com/4d/2f/92/4d2f92b8c68718dd3efb74b9f9b5fa4e.js"]
+
+      scripts.forEach(function (src) {
+        let script = document.createElement("script")
+        script.type = "text/javascript"
+        script.src = src
+        div.appendChild(script)
+      })
+    } else if (ads === "off2") {
+      advDiv.remove()
+    }
+  } else if (div2 && ads != "off2") {
+    let scripts = ["//alleygoat.com/4d/2f/92/4d2f92b8c68718dd3efb74b9f9b5fa4e.js"]
+    scripts.forEach(function (src) {
+      let script = document.createElement("script")
+      script.type = "text/javascript"
+      script.src = src
+      div.appendChild(script)
+    })
   }
 })
 
