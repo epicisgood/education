@@ -1,5 +1,5 @@
+import fs from "node:fs"
 import path from "node:path"
-import fs from "fs"
 import fetch from "node-fetch"
 
 const LICENSE_SERVER_URL = "https://masqr.gointerstellar.app/validate?license="
@@ -36,11 +36,17 @@ export function setupMasqr(app) {
     const pass = auth[1]
 
     try {
-      const licenseCheckResponse = await fetch(LICENSE_SERVER_URL + pass + "&host=" + req.headers.host)
+      const licenseCheckResponse = await fetch(
+        LICENSE_SERVER_URL + pass + "&host=" + req.headers.host
+      )
       const licenseCheck = (await licenseCheckResponse.json())["status"]
-      console.log(LICENSE_SERVER_URL + pass + "&host=" + req.headers.host + " returned " + licenseCheck)
+      console.log(
+        LICENSE_SERVER_URL + pass + "&host=" + req.headers.host + " returned " + licenseCheck
+      )
       if (licenseCheck === "License valid") {
-        res.cookie("authcheck", "true", { expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) })
+        res.cookie("authcheck", "true", {
+          expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
+        })
         res.send("<script> window.location.href = window.location.href </script>")
         return
       }

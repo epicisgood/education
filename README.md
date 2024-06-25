@@ -4,7 +4,7 @@
     <p>Interstellar is a web proxy with a Clean and Sleek UI and easy to use menus. Our goal is to provide the best user experience to everyone.</p>
 </div>
 
-![inpreview](https://github.com/InterstellarNetwork/Interstellar/assets/89202835/2669efed-5186-4932-83c4-725acae60bd2)
+![inpreview](https://github.com/UseInterstellar/Interstellar/assets/89202835/2669efed-5186-4932-83c4-725acae60bd2)
 
 > [!IMPORTANT]
 > If you fork this project, consider giving it a star in the original repository!
@@ -30,26 +30,68 @@
 > [!IMPORTANT]
 > You **cannot** deploy to static web hosts, including Netlify, Cloudflare Pages, and GitHub Pages.
 
+### Password Protection
+
+1. Go to the `config.js` file and set `challenge` to **true**. Then, set the environment variable as follows:
+2. For PNPM: Run either `config=true pnpm start` or `$env:config=true; pnpm start`, depending on your server.
+3. For Bun: Run either `config=true bun start` or `$env:config=true; bun start` if you prefer Bun.
+4. For NPM: Run either `config=true npm start` or `$env:config=true; npm start` if you prefer NPM.
+
+
 ### Server Deployment
 
-You must run these commands on your server:  
+You must run these commands on your server:
+
 ```bash
-git clone https://github.com/InterstellarNetwork/Interstellar
-cd Interstellar 
-npm install
-npm start
+git clone https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+```
+
+#### Ad-Free Deployment
+
+```bash
+git clone --branch Ad-Free https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+```
+
+Next depending on your package manager, run one of the following commands:
+
+#### Bun
+
+If you are using Bun, run the following commands:
+
+```bash
+bun i
+bun start
+```
+
+#### pnpm
+
+If you are using pnpm, run the following commands:
+
+```bash
+pnpm i
+pnpm start
+```
+
+#### npm
+
+If you are using npm, run the following commands:
+
+```bash
+npm i
+npm run start
 ```
 
 ### Updating
 
 ```bash
 cd Interstellar
-git pull --force --allow-unrelated-histories # may overwrite changes!
+git pull --force --allow-unrelated-histories # This may overwrite your local changes
 ```
 
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/interstellarnetwork/interstellar"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
-<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/interstellarnetwork/interstellar"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
-<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/interstellarnetwork/Interstellar"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/UseInterstellar/Interstellar"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
+<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/UseInterstellar/Interstellar"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
 
 ### Deployment Alternatives
 
@@ -62,14 +104,15 @@ As of January 1st, 2024, Replit is [no longer free](https://blog.replit.com/host
 
 ### GitHub Codespaces
 
+> [!NOTE]
 > If you're setting the port below 1023, then you must run `sudo PORT=1023`
 
 1. Create a GitHub account if you haven't already.
 2. Click "Code" (green button) and then "Create Codespace on main."
 3. In the terminal at the bottom, paste `pnpm i && pnpm start`.
 4. Respond to the application popup by clicking "Make public."
-   > [!IMPORTANT]
-   > Make sure you click the "Make public." button, or the proxy won't function properly.
+> [!IMPORTANT]
+> Make sure you click the "Make public." button, or the proxy won't function properly.
 5. Access the deployed website from the ports tab.
 6. For subsequent uses in the same codespace, just run `pnpm start`
 
@@ -94,4 +137,4 @@ If you encounter problems, open an issue on GitHub, and we'll address it promptl
 
 A huge thanks goes out to all of the people who have contributed to Interstellar.
 
-[![Contributors](https://contrib.rocks/image?repo=InterstellarNetwork/Interstellar)](https://github.com/InterstellarNetwork/Interstellar/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=UseInterstellar/Interstellar)](https://github.com/UseInterstellar/Interstellar/graphs/contributors)

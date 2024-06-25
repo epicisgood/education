@@ -5,10 +5,22 @@
     "categories": ["all"],
     "custom": "true"
   },
+   {
+    "name": "! Interstellar FAQ/Docs",
+    "image": "/assets/media/icons/help_center_googlefonts.png",
+    "link": "https://docs.gointerstellar.app",
+    "categories": ["all"]
+  },
   {
     "name": "! [NEW] Request A Game",
     "link": "https://forms.gle/vwdHN3iPz5cLaHaMA",
     "image": "/assets/media/icons/request.webp",
+    "categories": ["all"]
+  },
+  {
+    "name": "Fancade",
+    "link": "https://play.fancade.com",
+    "image": "/assets/media/icon/fancade.jpg",
     "categories": ["all"]
   },
   {
@@ -1111,7 +1123,7 @@
   },
   {
     "name": "MooMoo.io",
-    "link": "https:/moomoo.io",
+    "link": "https://moomoo.io",
     "image": "/assets/media/icons/moo.webp",
     "categories": ["all"]
   },
@@ -1122,7 +1134,7 @@
     "categories": ["all"]
   },
   {
-    "name": "Mr.Mine",
+    "name": "Mr. Mine",
     "link": "https://www.coolmathgames.com/0-mr-mine/play",
     "image": "/assets/media/icons/mrmine.webp",
     "categories": ["all"]
@@ -1155,12 +1167,6 @@
     "name": "Saul Run",
     "link": "https://complex-ify.itch.io/saul-goodman",
     "image": "/assets/media/icons/saulrun.webp",
-    "categories": ["all"]
-  },
-  {
-    "name": "NG Space Company",
-    "link": "https://interstellarnetwork.github.io/interstellar-assets/play/ng-space-company/frontend/dist/index.html",
-    "image": "/assets/media/icons/ng.webp",
     "categories": ["all"]
   },
   {
@@ -1485,9 +1491,7 @@
     "name": "Taming.io",
     "link": "https://taming.io/",
     "image": "/assets/media/icons/tamingio.webp",
-    "categories": ["all"],
-    "error": "true",
-    "say": "Taming.io is currently broken on the proxy and will crash Interstellar when attempted to load."
+    "categories": ["all"]
   },
   {
     "name": "Temple of Boom",
@@ -1872,6 +1876,71 @@
     "name": "Goomy Clicker 2",
     "link": "https://idle-js-games.github.io/goomyClicker2/",
     "image": "/assets/media/icons/gc2.webp",
+    "categories": ["all"]
+  },
+  {
+    "name": "Space Company",
+    "link": "/e/1/space-company/index.html",
+    "image": "/assets/media/icons/sc.png",
+    "categories": ["all", "local"]
+  },
+  {
+    "name": "Mario Kart DS",
+    "link": "https://seraph.reveriestudios.online/games/mariokartds/index.html",
+    "image": "/assets/media/icons/mariokartds.jpg",
+    "categories": ["all", "emu"]
+  },
+  {
+    "name": "Cooking Mama",
+    "link": "https://seraph.reveriestudios.online/games/cookingmama/index.html",
+    "image": "/assets/media/icons/cookingmama.jpg",
+    "categories": ["all", "emu"]
+  },
+  {
+    "name": "Wordle",
+    "link": "https://www.nytimes.com/games/wordle/index.html",
+    "image": "/assets/media/icons/w.webp",
+    "categories": ["all"]
+  },
+  {
+    "name": "Wordle Unlimited",
+    "link": "https://wordleunlimited.org/",
+    "image": "/assets/media/icons/w.webp",
+    "categories": ["all"]
+  },
+  {
+    "name": "Wordly",
+    "link": "https://wordly.org/",
+    "image": "/assets/media/icons/w.webp",
+    "categories": ["all"]
+  },
+  {
+    "name": "Connections",
+    "link": "https://www.nytimes.com/games/connections",
+    "image": "/assets/media/icons/cn.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Connections Unlimited",
+    "link": "https://1games.io/game/connections-game/",
+    "image": "/assets/media/icons/cn.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Globle",
+    "link": "https://globle.org/?",
+    "image": "/assets/media/icons/cn.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Particle Clicker",
+    "link": "/e/1/particle-clicker/index.html",
+    "image": "/assets/media/icons/pc.png",
+    "categories": ["all,", "local"]
+  },
+  {
+    "name": "ShipCraft.io",
+    "link": "https://shipcraft.io/",
     "categories": ["all"]
   }
 ]
